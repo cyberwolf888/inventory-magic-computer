@@ -27,6 +27,14 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
+
+    Route::group(['prefix'=>'product', 'name'=>'product'], function () {
+        Route::get('/', [\App\Http\Controllers\ProductController::class, 'index'])->middleware('can:product.view')->name('.index');
+        Route::post('/store', [\App\Http\Controllers\ProductController::class, 'store'])->middleware('can:product.store')->name('.store');
+        Route::post('/update', [\App\Http\Controllers\ProductController::class, 'update'])->middleware('can:product.update')->name('.update');
+        Route::post('/delete', [\App\Http\Controllers\ProductController::class, 'destroy'])->middleware('can:product.delete')->name('.delete');
+    });
+
     Route::get('admin', function () {
         return 'admin';
     })->middleware('role:admin')->name('admin');
@@ -35,7 +43,7 @@ Route::middleware('auth')->group(function () {
     })->middleware('role:super-admin')->name('super-admin');
 
     Route::get('bedebah', function () {
-        return 'bedebah';
+        return view('dashboard.index');
     })->middleware('role:admin|super-admin')->name('bedebah');
 
 });
