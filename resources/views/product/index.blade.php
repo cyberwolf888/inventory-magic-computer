@@ -4029,5 +4029,5 @@
 @endsection
 
 @push('vendor_js')
-    <script src="{{ env('APP_URL') }}assets/js/custom/apps/ecommerce/catalog/products.js"></script>
+    @include('product.script_index')
 @endpush

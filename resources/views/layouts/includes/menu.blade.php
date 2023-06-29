@@ -30,60 +30,52 @@
             <div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="bottom-start"
                  data-kt-menu-offset="-100,0"
                  class="menu-item here show menu-here-bg menu-lg-down-accordion me-0 me-lg-2">
-                <!--begin:Menu link--><span
-                    class="menu-link"><span class="menu-title">Dashboards</span><span
-                        class="menu-arrow d-lg-none"></span></span><!--end:Menu link--><!--begin:Menu sub-->
-                <div class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown p-0 w-100 w-lg-850px">
-                    <!--layout-partial:layout/partials/header/_menu/__dashboards.html-->
-                </div><!--end:Menu sub-->
+                <!--begin:Menu link-->
+                <span class="menu-link"><span class="menu-title">Dashboards</span>
+                    <span class="menu-arrow d-lg-none"></span>
+                </span>
+                <!--end:Menu link-->
             </div><!--end:Menu item--><!--begin:Menu item-->
             <div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="bottom-start"
                  data-kt-menu-offset="-300,0" class="menu-item menu-lg-down-accordion me-0 me-lg-2">
-                <!--begin:Menu link--><span class="menu-link"><span class="menu-title">Pages</span><span
-                        class="menu-arrow d-lg-none"></span></span><!--end:Menu link--><!--begin:Menu sub-->
-                <div class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown p-0">
-                    <!--layout-partial:layout/partials/header/_menu/__pages.html-->
-                </div><!--end:Menu sub-->
-            </div><!--end:Menu item--><!--begin:Menu item-->
+                <!--begin:Menu link-->
+                <a class="menu-link" href="{{ route('product.index') }}"><span class="menu-title">Product</span>
+                    <span class="menu-arrow d-lg-none"></span>
+                </a><!--end:Menu link-->
+            </div><!--end:Menu item-->
+            <!--begin:Menu item-->
 
             <div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="bottom-start"
                  class="menu-item menu-lg-down-accordion menu-sub-lg-down-indention me-0 me-lg-2">
-                <!--begin:Menu link--><span class="menu-link"><span class="menu-title">Help</span><span
+                <!--begin:Menu link--><span class="menu-link"><span class="menu-title">Master Data</span><span
                         class="menu-arrow d-lg-none"></span></span><!--end:Menu link--><!--begin:Menu sub-->
                 <div class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown px-lg-2 py-lg-4 w-lg-200px">
                     <!--begin:Menu item-->
                     <div class="menu-item"><!--begin:Menu link--><a class="menu-link"
-                                                                    href="https://preview.keenthemes.com/html/metronic/docs/base/utilities"
-                                                                    target="_blank"
+                                                                    href="{{ route('rak.index') }}"
                                                                     title="Check out over 200 in-house components, plugins and ready for use solutions"
                                                                     data-bs-toggle="tooltip" data-bs-trigger="hover"
                                                                     data-bs-dismiss="click"
                                                                     data-bs-placement="right"><span class="menu-icon"><i
                                     class="ki-outline ki-rocket fs-2"></i></span><span
-                                class="menu-title">Components</span></a><!--end:Menu link--></div>
+                                class="menu-title">Rak</span></a><!--end:Menu link--></div>
                     <!--end:Menu item--><!--begin:Menu item-->
                     <div class="menu-item"><!--begin:Menu link--><a class="menu-link"
-                                                                    href="https://preview.keenthemes.com/html/metronic/docs"
-                                                                    target="_blank"
+                                                                    href="{{ route('lokasi.index') }}"
                                                                     title="Check out the complete documentation"
                                                                     data-bs-toggle="tooltip"
                                                                     data-bs-trigger="hover" data-bs-dismiss="click"
                                                                     data-bs-placement="right"><span
                                 class="menu-icon"><i class="ki-outline ki-abstract-26 fs-2"></i></span><span
-                                class="menu-title">Documentation</span></a><!--end:Menu link--></div>
+                                class="menu-title">Lokasi</span></a><!--end:Menu link--></div>
                     <!--end:Menu item--><!--begin:Menu item-->
-                    <div class="menu-item"><!--begin:Menu link--><a class="menu-link" href="?page=layout-builder"
+                    <div class="menu-item"><!--begin:Menu link--><a class="menu-link" href="{{ route('category.index') }}"
                                                                     title="Build your layout and export HTML for server side integration"
                                                                     data-bs-toggle="tooltip" data-bs-trigger="hover"
                                                                     data-bs-dismiss="click"
                                                                     data-bs-placement="right"><span class="menu-icon"><i
-                                    class="ki-outline ki-switch fs-2"></i></span><span class="menu-title">Layout
-                                Builder</span></a><!--end:Menu link--></div><!--end:Menu item--><!--begin:Menu item-->
-                    <div class="menu-item"><!--begin:Menu link--><a class="menu-link"
-                                                                    href="https://preview.keenthemes.com/html/metronic/docs/getting-started/changelog"
-                                                                    target="_blank"><span class="menu-icon"><i
-                                    class="ki-outline ki-code fs-2"></i></span><span
-                                class="menu-title">Changelog v8.1.8</span></a><!--end:Menu link--></div>
+                                    class="ki-outline ki-switch fs-2"></i></span><span class="menu-title">Kategori</span></a><!--end:Menu link--></div><!--end:Menu item--><!--begin:Menu item-->
+                    <div class="menu-item"><!--begin:Menu link--></div>
                     <!--end:Menu item-->
                 </div><!--end:Menu sub-->
             </div><!--end:Menu item-->
