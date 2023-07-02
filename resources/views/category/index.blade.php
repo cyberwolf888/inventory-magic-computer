@@ -1,9 +1,9 @@
 @extends('layouts.main')
 
-@section('title', 'Kategori')
+@section('title', 'Category')
 
 @section('page-title')
-    <span>Kategori</span>
+    <span>Category</span>
 @endsection
 
 @section('breadcrumb')
@@ -22,7 +22,7 @@
         </li>
         <!--end::Item-->
         <!--begin::Item-->
-        <li class="breadcrumb-item text-gray-700 fw-bold lh-1">Kategori</li>
+        <li class="breadcrumb-item text-gray-700 fw-bold lh-1">Category</li>
         <!--end::Item-->
         <!--begin::Item-->
         <li class="breadcrumb-item">
@@ -49,28 +49,16 @@
                     <div class="d-flex align-items-center position-relative my-1">
                         <i class="ki-outline ki-magnifier fs-3 position-absolute ms-4"></i>
                         <input type="text" data-kt-ecommerce-product-filter="search"
-                               class="form-control form-control-solid w-250px ps-12" placeholder="Search Product"/>
+                               class="form-control form-control-solid w-250px ps-12" placeholder="Search Category"/>
                     </div>
                     <!--end::Search-->
                 </div>
                 <!--end::Card title-->
                 <!--begin::Card toolbar-->
                 <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
-                    <div class="w-100 mw-150px">
-                        <!--begin::Select2-->
-                        <select class="form-select form-select-solid" data-control="select2" data-hide-search="true"
-                                data-placeholder="Status" data-kt-ecommerce-product-filter="status">
-                            <option></option>
-                            <option value="all">All</option>
-                            <option value="published">Published</option>
-                            <option value="scheduled">Scheduled</option>
-                            <option value="inactive">Inactive</option>
-                        </select>
-                        <!--end::Select2-->
-                    </div>
+
                     <!--begin::Add product-->
-                    <a href="../../demo37/dist/apps/ecommerce/catalog/add-product.html" class="btn btn-primary">Add
-                        Product</a>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_form">Add Category</button>
                     <!--end::Add product-->
                 </div>
                 <!--end::Card toolbar-->
@@ -79,7 +67,17 @@
             <!--begin::Card body-->
             <div class="card-body pt-0">
                 <!--begin::Table-->
-
+                <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_table_datatables">
+                    <thead>
+                    <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
+                        <th class="min-w-100">Nama Category</th>
+                        <th>Created At</th>
+                        <th class="max-w-100">Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody class="text-gray-600 fw-semibold">
+                    </tbody>
+                </table>
                 <!--end::Table-->
             </div>
             <!--end::Card body-->
@@ -87,7 +85,11 @@
         <!--end::Products-->
     </div>
     <!--end::Content-->
+
+    @include('category.modal_form')
 @endsection
 
 @push('vendor_js')
+    @include('category.script_index')
+    @include('category.script_modal_form')
 @endpush

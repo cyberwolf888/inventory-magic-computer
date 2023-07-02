@@ -26,25 +26,25 @@
                 px-2
                 px-lg-0
             " id="#kt_header_menu" data-kt-menu="true">
-            <!--begin:Menu item-->
-            <div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="bottom-start"
-                 data-kt-menu-offset="-100,0"
-                 class="menu-item here show menu-here-bg menu-lg-down-accordion me-0 me-lg-2">
-                <!--begin:Menu link-->
-                <span class="menu-link"><span class="menu-title">Dashboards</span>
-                    <span class="menu-arrow d-lg-none"></span>
-                </span>
-                <!--end:Menu link-->
-            </div><!--end:Menu item--><!--begin:Menu item-->
-            <div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="bottom-start"
-                 data-kt-menu-offset="-300,0" class="menu-item menu-lg-down-accordion me-0 me-lg-2">
-                <!--begin:Menu link-->
-                <a class="menu-link" href="{{ route('product.index') }}"><span class="menu-title">Product</span>
-                    <span class="menu-arrow d-lg-none"></span>
-                </a><!--end:Menu link-->
-            </div><!--end:Menu item-->
-            <!--begin:Menu item-->
 
+            <!--begin:Menu item-->
+            <div class="menu-item here show menu-here-bg menu-lg-down-accordion me-0 me-lg-2">
+                <a href="{{ route('dashboard') }}" class="menu-link">
+                    <span class="menu-title">Dashboards</span>
+                </a>
+            </div>
+            <!--end:Menu item-->
+
+            <!--begin:Menu item-->
+            <div class="menu-item show menu-here-bg menu-lg-down-accordion me-0 me-lg-2">
+                <a href="{{ route('product.index') }}" class="menu-link">
+                    <span class="menu-title">Products</span>
+                </a>
+            </div>
+            <!--end:Menu item-->
+
+
+            <!--begin:Menu item-->
             <div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="bottom-start"
                  class="menu-item menu-lg-down-accordion menu-sub-lg-down-indention me-0 me-lg-2">
                 <!--begin:Menu link--><span class="menu-link"><span class="menu-title">Master Data</span><span

@@ -5,6 +5,7 @@
     <base href=""/>
     <title>{{ env('APP_NAME') }} - @yield('title')</title>
     <meta charset="utf-8"/>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="description" content="
             The most advanced Bootstrap 5 Admin Theme with 40 unique prebuilt layouts on Themeforest trusted by 100,000 beginners and professionals. Multi-demo,
             Dark Mode, RTL support and complete React, Angular, Vue, Asp.Net Core, Rails, Spring, Blazor, Django, Express.js, Node.js, Flask, Symfony & Laravel versions.
@@ -178,6 +179,7 @@
 
 
 <!--begin::Modals-->
+@include('layouts.includes.modals.modal_product')
 <!--layout-partial:partials/modals/_upgrade-plan.html-->
 <!--layout-partial:partials/modals/_invite-friends.html-->
 <!--layout-partial:partials/modals/_new-target.html-->
@@ -192,6 +194,17 @@
 <script src="{{ env('APP_URL') }}assets/plugins/global/plugins.bundle.js"></script>
 <script src="{{ env('APP_URL') }}assets/js/scripts.bundle.js"></script>
 <!--end::Global Javascript Bundle-->
+<script>
+    // Retrieve the CSRF token value from the meta tag
+    var csrfToken = $('meta[name="csrf-token"]').attr('content');
+
+    // Set the CSRF token as the default header for all AJAX requests
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': csrfToken
+        }
+    });
+</script>
 <!--begin::Vendors Javascript(used for this page only)-->
 <script src="{{ env('APP_URL') }}assets/plugins/custom/fullcalendar/fullcalendar.bundle.js"></script>
 <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
@@ -211,10 +224,10 @@
 @stack('vendor_js')
 <script src="{{ env('APP_URL') }}assets/js/widgets.bundle.js"></script>
 <script src="{{ env('APP_URL') }}assets/js/custom/widgets.js"></script>
-<script src="{{ env('APP_URL') }}assets/js/custom/apps/chat/chat.js"></script>
-<script src="{{ env('APP_URL') }}assets/js/custom/utilities/modals/upgrade-plan.js"></script>
+{{--<script src="{{ env('APP_URL') }}assets/js/custom/apps/chat/chat.js"></script>--}}
+{{--<script src="{{ env('APP_URL') }}assets/js/custom/utilities/modals/upgrade-plan.js"></script>--}}
 <script src="{{ env('APP_URL') }}assets/js/custom/utilities/modals/new-target.js"></script>
-<script src="{{ env('APP_URL') }}assets/js/custom/utilities/modals/users-search.js"></script>
+{{--<script src="{{ env('APP_URL') }}assets/js/custom/utilities/modals/users-search.js"></script>--}}
 @stack('custom_js')
 <!--end::Custom Javascript-->
 <!--end::Javascript-->

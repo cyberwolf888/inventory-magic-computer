@@ -58,7 +58,7 @@
                 <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
 
                     <!--begin::Add product-->
-                    <a href="#" class="btn btn-primary">Add Rak</a>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_form">Add Rak</button>
                     <!--end::Add product-->
                 </div>
                 <!--end::Card toolbar-->
@@ -67,7 +67,17 @@
             <!--begin::Card body-->
             <div class="card-body pt-0">
                 <!--begin::Table-->
-
+                <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_table_datatables">
+                    <thead>
+                    <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
+                        <th class="min-w-100">Nama Rak</th>
+                        <th>Created At</th>
+                        <th class="max-w-100">Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody class="text-gray-600 fw-semibold">
+                    </tbody>
+                </table>
                 <!--end::Table-->
             </div>
             <!--end::Card body-->
@@ -75,7 +85,11 @@
         <!--end::Products-->
     </div>
     <!--end::Content-->
+
+    @include('rak.modal_form')
 @endsection
 
 @push('vendor_js')
+    @include('rak.script_index')
+    @include('rak.script_modal_form')
 @endpush
